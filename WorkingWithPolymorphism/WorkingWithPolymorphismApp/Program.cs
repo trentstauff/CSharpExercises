@@ -1,11 +1,15 @@
 ﻿using System;
 
-namespace WorkingWithPolymorphism
+namespace WorkingWithPolymorphismApp
 {
     class Program
     {
         static void Main(string[] args)
         {
+        
+            // Ex. #1
+            // Database Connection Question
+            
             // Successful connection! You connect before the
             // timespan has passed.
             var timeSpanSql1 = new TimeSpan(0,0, 5);
@@ -31,6 +35,24 @@ namespace WorkingWithPolymorphism
             var timeSpanSql2 = new TimeSpan(0,0, 0);
             var sqlConnection2 = new SqlConnection("20.542.343", timeSpanSql2);
             sqlConnection2.CloseConnection();
+            
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------------------------------");
+            Console.WriteLine("DbCommand Exercises");
+            
+            // ---------------------------------------------------------------------
+            // Ex. #2
+            // DbCommand question
+            
+            var dbCommandConnectionSql = new SqlConnection("69.341.333", new TimeSpan(0,0,0) );
+            var dbCommand = new DbCommand(dbCommandConnectionSql,"SQL Instruction");
+            dbCommand.Execute();
+            
+            Console.WriteLine();
+            
+            var dbCommandConnectionOracle = new OracleConnection("88.223.179", new TimeSpan(0,0,0));
+            var dbCommand2 = new DbCommand(dbCommandConnectionOracle, "Oracle Instruction");
+            dbCommand2.Execute();
         }
     }
 }

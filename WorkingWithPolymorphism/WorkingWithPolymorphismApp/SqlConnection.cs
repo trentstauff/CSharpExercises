@@ -1,6 +1,6 @@
 using System;
 
-namespace WorkingWithPolymorphism
+namespace WorkingWithPolymorphismApp
 {
     internal class SqlConnection : DbConnection
     {
